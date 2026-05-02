@@ -1,0 +1,252 @@
+* {
+  margin: 0; /* Hilangkan margin default browser */
+  padding: 0; /* Hilangkan padding default */
+  box-sizing: border-box; /* Biar ukuran lebih konsisten */
+}
+
+
+body {
+  font-family: "Segoe UI", sans-serif; /* Font clean modern */
+  background-color: #0f0f0f; /* Background gelap */
+  color: #ffffff; /* Teks putih */
+  line-height: 1.6; /* Jarak antar baris */
+}
+
+/* =========================
+   HEADER (FLEXBOX)
+========================= */
+header {
+  display: flex; /* Aktifkan flexbox */
+  justify-content: space-between; /* Jarak kiri-kanan */
+  align-items: center; /* Tengah vertikal */
+  padding: 25px 40px; /* Ruang dalam */
+
+  position: sticky; /* Nempel saat discroll */
+  top: 0; /* Posisi di paling atas */
+  z-index: 1000; /* Supaya tidak ketiban elemen lain */
+
+  background: rgba(15, 15, 15, 0.7);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #313131; /* Garis bawah tipis */
+}
+
+/* Logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #f46fb1; /* Aksen warna */
+}
+
+/* Navigasi */
+nav {
+  display: flex; /* Menu horizontal */
+  gap: 32px; /* Jarak antar link */
+}
+
+nav a {
+  text-decoration: none; /* Hilangkan underline */
+  color: #ccc; /* Warna abu */
+  transition: 0.3s; /* Animasi halus */
+}
+
+nav a:hover {
+  color: #f46fb1; /* Hover effect */
+}
+
+/* =========================
+   HERO SECTION (FLEXBOX)
+========================= */
+.hero {
+  display: flex; /* Layout 2 kolom */
+  justify-content: center; /* Jarak antar elemen */
+  align-items: center; /* Tengah vertikal */
+  padding: 70px 40px 150px 40px; /* Spacing */
+  gap: 70px; /* Jarak teks & gambar */
+  /* Responsive */
+}
+
+/* Label kecil */
+.label {
+  color: #f46fb1;
+  margin-bottom: 10px;
+}
+
+/* Judul utama */
+.hero h1 {
+  font-size: 90px;
+  margin-bottom: 20px;
+}
+
+.nama {
+  color: #f46fb1; /* Highlight nama */
+}
+
+/* Tombol */
+.tombol {
+  display: inline-block;
+  margin-top: 20px;
+  margin-right: 12px;
+  padding: 10px 20px;
+  border: 1px solid #f46fb1;
+  color: #f46fb1;
+  text-decoration: none;
+  transition: 0.3s;
+  border-radius: 6px
+}
+
+.tombol:hover {
+  background-color: #f46fb1;
+  color: #000;
+}
+
+/* Gambar */
+.foto {
+  width: 550px;
+  border-radius: 10px; /* Sudut halus */
+}
+
+/* =========================
+   SECTION PROYEK
+========================= */
+#proyek {
+  padding: 60px 40px;
+}
+
+#proyek h1 {
+  margin-bottom: 30px;
+}
+
+/* GRID (CSS GRID) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Kartu */
+.kartu {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border: 1px solid #222;
+  transition: 0.3s;
+}
+
+/* Hover kartu */
+.kartu:hover {
+  transform: translateY(-5px); /* Naik sedikit */
+  border-color: #f46fb1;
+}
+
+/* Nomor */
+.no {
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+/* Judul kartu */
+.kartu h3 {
+  margin-bottom: 10px;
+}
+
+/* Stack teknologi */
+.stack {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #f46fb1;
+}
+
+/* Kartu gelap beda */
+.kartu.gelap {
+  background-color: #111;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #222;
+  color: #777;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .hero img {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+}
+
+/* Mode Terang — warna lembut, tidak menyilaukan */
+body.mode-terang {
+  background-color: #e8eaeb;
+  color: #c64e7e;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+/* Aksen teal → versi lebih gelap di light mode */
+body.mode-terang .nama,
+body.mode-terang .label,
+body.mode-terang .stack,
+body.mode-terang nav a:hover,
+body.mode-terang .tombol {
+  color: #c64e7e; /* teal gelap, tidak neon */
+}
+
+body.mode-terang nav a {
+  text-decoration: none; /* Hilangkan underline */
+  color: #c64e7e; /* Warna abu */
+  transition: 0.3s; /* Animasi halus */
+}
+
+body.mode-terang nav a:hover {
+  color: #811540; /* Hover effect */
+}
+
+
+body.mode-terang .tombol {
+  border-color: #c03279;
+}
+
+body.mode-terang .tombol:hover {
+  background-color: #811540;
+  color: #fff;
+}
+
+body.mode-terang .logo span {
+  color: #c64e7e; 
+}
+
+/* Kartu */
+body.mode-terang .kartu {
+  background-color: #d8dadb;
+  border-color: #b8babb;
+}
+
+body.mode-terang .kartu.gelap {
+  background-color: #cecfd0;
+}
+
+/* Header */
+body.mode-terang header {
+  background: rgba(232, 234, 235, 0.85);
+  border-bottom-color: #b8babb;
+}
+
+/* Footer */
+body.mode-terang footer {
+  border-top-color: #b8babb;
+}
